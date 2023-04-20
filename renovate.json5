@@ -5,17 +5,22 @@
     "github>suzuki-shunsuke/renovate-config#2.0.0",
     "github>suzuki-shunsuke/renovate-config:nolimit#2.0.0",
   ],
+  packageRules: [
+    {
+
+    },
+  ],
   regexManagers: [
     {
       fileMatch: [
         ".*\\.tf$",
       ],
       matchStrings: [
-        "^ +source += +\"github.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/.*)\\?ref=module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(-\\d+)?)\"",
+        "^ +source += +\"github.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/.*)\\?ref=module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
       ],
       packageNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate",
       datasourceTemplate: "github-releases",
-      extractVersionTemplate: "^module_modules_.*-(?<version>v\\d+\\.\\d+\\.\\d+(-\\d+)?)$",
+      extractVersionTemplate: "^module_modules_.*-(?<version>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)$",
     },
   ],
 }
