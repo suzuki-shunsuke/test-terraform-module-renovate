@@ -12,6 +12,12 @@
       matchDepTypes: ["module"],
       enabled: false,
     },
+    {
+      matchPackageNames: ["suzuki-shunsuke/test-terraform-module-renovate"],
+      matchDatasources: ["terraform"],
+      matchDepTypes: ["module"],
+      enabled: false,
+    },
   ],
   regexManagers: [
     {
