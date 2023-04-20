@@ -24,7 +24,7 @@
         "^foo\\.txt$",
       ],
       matchStrings: [
-        "foo: module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
+        "foo: module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)",
       ],
       packageNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate",
       depNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate//modules/foo",
