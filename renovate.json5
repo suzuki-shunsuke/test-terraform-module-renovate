@@ -7,7 +7,10 @@
   ],
   packageRules: [
     {
-
+      matchPackageNames: ["suzuki-shunsuke/test-terraform-module-renovate"],
+      matchManagers: ["terraform"],
+      matchDepTypes: ["module"],
+      enabled: false,
     },
   ],
   regexManagers: [
@@ -16,10 +19,12 @@
         ".*\\.tf$",
       ],
       matchStrings: [
-        "^ +source += +\"github.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/.*)\\?ref=module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
+        "^ +source += +\"github.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/[^?]*)\\?ref=module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
       ],
       packageNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate",
+
       datasourceTemplate: "github-releases",
+      // extract version from datasource (GitHub Releases)
       extractVersionTemplate: "^module_modules_.*-(?<version>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)$",
     },
   ],
