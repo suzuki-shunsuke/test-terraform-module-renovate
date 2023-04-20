@@ -1,9 +1,10 @@
 {
   extends: [
     "config:base",
-    "github>suzuki-shunsuke/renovate-config#2.0.0",
-    "github>suzuki-shunsuke/renovate-config:nolimit#2.0.0",
   ],
+  branchConcurrentLimit: 0,
+  prConcurrentLimit: 0,
+  prHourlyLimit: 0,
   regexManagers: [
     {
       fileMatch: [
