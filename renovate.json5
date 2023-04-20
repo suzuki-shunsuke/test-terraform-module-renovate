@@ -16,7 +16,7 @@
 
       datasourceTemplate: "github-releases",
       // extract version from datasource (GitHub Releases)
-      extractVersionTemplate: "^module_modules_.*-(?<version>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)$",
+      extractVersionTemplate: "^module_modules_.*_(?<version>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)$",
     },
   ],
 }
