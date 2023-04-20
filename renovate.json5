@@ -19,5 +19,18 @@
       // extract version from datasource (GitHub Releases)
       extractVersionTemplate: "^module_modules_.*_(?<version>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)$",
     },
+    {
+      fileMatch: [
+        "^foo\\.txt$",
+      ],
+      matchStrings: [
+        "foo: module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
+      ],
+      packageNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate",
+      depNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate//modules/foo",
+      datasourceTemplate: "github-releases",
+      // extract version from datasource (GitHub Releases)
+      extractVersionTemplate: "^module_modules_.*_(?<version>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)$",
+    },
   ],
 }
