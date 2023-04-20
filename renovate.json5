@@ -1,23 +1,8 @@
 {
   extends: [
     "config:base",
-    "github>aquaproj/aqua-renovate-config#1.5.2",
     "github>suzuki-shunsuke/renovate-config#2.0.0",
     "github>suzuki-shunsuke/renovate-config:nolimit#2.0.0",
-  ],
-  packageRules: [
-    {
-      matchPackageNames: ["suzuki-shunsuke/test-terraform-module-renovate"],
-      matchManagers: ["terraform"],
-      matchDepTypes: ["module"],
-      enabled: false,
-    },
-    {
-      matchPackageNames: ["suzuki-shunsuke/test-terraform-module-renovate"],
-      matchDatasources: ["terraform"],
-      matchDepTypes: ["module"],
-      enabled: false,
-    },
   ],
   regexManagers: [
     {
@@ -25,7 +10,7 @@
         ".*\\.tf$",
       ],
       matchStrings: [
-        "^ +source += +\"github.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/[^?]*)\\?ref=module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
+        "^ +source += +\"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/[^?]*)\\?ref=module_modules_.*_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\"",
       ],
       packageNameTemplate: "suzuki-shunsuke/test-terraform-module-renovate",
 
