@@ -1,0 +1,18 @@
+---
+name: test
+
+on: pull_request
+
+env:
+  AQUA_LOG_COLOR: always
+
+permissions: {}
+
+jobs:
+  build-jsonnet:
+    uses: ./.github/workflows/wc-build-jsonnet.yaml
+    permissions:
+      contents: read # To checkout private repository
+    secrets:
+      gh_app_id: ${{secrets.APP_ID}}
+      gh_app_private_key: ${{secrets.APP_PRIVATE_KEY}}

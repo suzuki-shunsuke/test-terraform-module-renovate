@@ -68,14 +68,13 @@ jobs:
       - uses: aquaproj/aqua-installer@294926f94b4233f202a2f03875c604f840cfed70 # v2.1.1
         if: steps.generate_token.outputs.token_type == 'empty'
         with:
-          aqua_version: ${{inputs.aqua_version}}
+          aqua_version: v2.3.6
         env:
           AQUA_GITHUB_TOKEN: ${{github.token}}
       - uses: aquaproj/aqua-installer@294926f94b4233f202a2f03875c604f840cfed70 # v2.1.1
         if: "steps.generate_token.outputs.token_type != 'empty'"
         with:
-          aqua_version: ${{inputs.aqua_version}}
-          policy_allow: ${{inputs.policy_allow}}
+          aqua_version: v2.3.6
         env:
           AQUA_GITHUB_TOKEN: ${{steps.generate_token.outputs.token}}
 
@@ -86,7 +85,7 @@ jobs:
         run: git add renovate.json renovate/modules.json
 
       - shell: bash
-        if: fromJSON(inputs.skip_push)
+        if: fromJSON(steps.skip_push.outputs.skip_push)
         run: |
           if ! git diff --cached --exit-code "$RENOVATE_JSON" "$MODULES_JSON"; then
             echo "::error ::$RENOVATE_JSON or $MODULES_JSON aren't latest."
@@ -97,7 +96,7 @@ jobs:
           MODULES_JSON: renovate/modules.json
 
       - shell: bash
-        if: "! fromJSON(inputs.skip_push)"
+        if: "! fromJSON(steps.skip_push.outputs.skip_push)"
         run: |
           set -eu
           if git diff --cached --exit-code "$RENOVATE_JSON" "$MODULES_JSON"; then
