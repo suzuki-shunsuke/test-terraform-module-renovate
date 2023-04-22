@@ -120,3 +120,4 @@ jobs:
         env:
           RENOVATE_JSON: renovate.json
           MODULES_JSON: renovate/modules.json
+          GITHUB_TOKEN: ${{steps.generate_token.outputs.token}}
