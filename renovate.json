@@ -13,7 +13,7 @@
             ".*\\.tf$"
          ],
          "matchStrings": [
-            "^ +source += +\"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/bar)\\?ref=module_modules_bar_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\""
+            " +source += +\"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/bar)\\?ref=module_modules_bar_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\""
          ],
          "packageNameTemplate": "suzuki-shunsuke/test-terraform-module-renovate"
       },
@@ -24,7 +24,7 @@
             ".*\\.tf$"
          ],
          "matchStrings": [
-            "^ +source += +\"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/foo)\\?ref=module_modules_foo_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\""
+            " +source += +\"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/foo)\\?ref=module_modules_foo_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)\""
          ],
          "packageNameTemplate": "suzuki-shunsuke/test-terraform-module-renovate"
       }

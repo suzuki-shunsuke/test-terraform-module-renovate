@@ -3,7 +3,7 @@ local moduleRegexManager(modulePath) = {
     '.*\\.tf$',
   ],
   matchStrings: [
-    '^ +source += +"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/%s)\\?ref=module_modules_%s_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)"' % [
+    ' +source += +"github\\.com/(?<depName>suzuki-shunsuke/test-terraform-module-renovate//modules/%s)\\?ref=module_modules_%s_(?<currentValue>v\\d+\\.\\d+\\.\\d+(?:-\\d+)?)"' % [
       modulePath,
       std.strReplace(modulePath, '/', '_'),
     ],
