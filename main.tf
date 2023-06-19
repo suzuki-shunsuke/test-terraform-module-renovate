@@ -3,5 +3,5 @@ module "foo" {
 }
 
 module "bar" {
-  source = "github.com/suzuki-shunsuke/test-terraform-module-renovate//modules/bar?ref=module_modules_bar_v0.1.0"
+  source = "github.com/suzuki-shunsuke/test-terraform-module-renovate//modules/bar?ref=module_modules_bar_v0.1.1"
 }
