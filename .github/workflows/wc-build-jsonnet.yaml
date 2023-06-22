@@ -65,13 +65,13 @@ jobs:
           ref: ${{steps.ref.outputs.ref}}
 
       # Install ghcp and go-jsonnet
-      - uses: aquaproj/aqua-installer@294926f94b4233f202a2f03875c604f840cfed70 # v2.1.1
+      - uses: aquaproj/aqua-installer@36dc5833b04eb63f06e3bb818aa6b7a6e6db99a9 # v2.1.2
         if: steps.generate_token.outputs.token_type == 'empty'
         with:
           aqua_version: v2.3.6
         env:
           AQUA_GITHUB_TOKEN: ${{github.token}}
-      - uses: aquaproj/aqua-installer@294926f94b4233f202a2f03875c604f840cfed70 # v2.1.1
+      - uses: aquaproj/aqua-installer@36dc5833b04eb63f06e3bb818aa6b7a6e6db99a9 # v2.1.2
         if: "steps.generate_token.outputs.token_type != 'empty'"
         with:
           aqua_version: v2.3.6
