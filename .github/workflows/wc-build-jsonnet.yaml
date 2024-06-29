@@ -18,6 +18,7 @@ permissions: {}
 
 jobs:
   build-jsonnet:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     permissions:
       contents: read # To checkout private repository
